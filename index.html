@@ -220,19 +220,14 @@ h1 {
 }
 .visitor-counter {
   text-align: center;
-  margin: 30px auto;
-  padding: 15px;
+  margin: 0 auto 20px auto;
+  padding: 10px;
   color: #e0e0e0;
   font-size: 1.2em;
   border: 1px solid #333;
   background: rgba(255, 255, 255, 0.05);
-  max-width: 300px;
+  max-width: 200px;
   display: block;
-}
-.visitor-counter * {
-  color: #999 !important;
-  font-size: 0.85em !important;
-  text-align: center !important;
 }
 footer {
   margin-top: 60px;
@@ -363,21 +358,14 @@ footer {
   var pollInterval = setInterval(function() {
     if (window.goatcounter && window.goatcounter.visit_count) {
       clearInterval(pollInterval);
-      var container = document.getElementById('gc-visitors');
-      if (container) {
-        window.goatcounter.visit_count({
-          append: '#gc-visitors',
-          type: 'html',
-          no_branding: true
-        });
-      }
+      window.goatcounter.visit_count({
+        append: '#gc-visitors',
+        type: 'html',
+        no_branding: true,
+        style: 'color: #999; font-size: 0.85em;'
+      });
     }
   }, 100);
-  
-  // Timeout after 10 seconds
-  setTimeout(function() {
-    clearInterval(pollInterval);
-  }, 10000);
 })();
 </script>
 
