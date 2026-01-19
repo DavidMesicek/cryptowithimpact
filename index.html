@@ -222,8 +222,8 @@ h1 {
   text-align: center;
   margin: 0 auto 20px auto;
   padding: 10px 15px;
-  color: #e0e0e0;
-  font-size: 1.2em;
+  color: #999;
+  font-size: 0.85em;
   border: 1px solid #333;
   background: rgba(255, 255, 255, 0.05);
   max-width: 250px;
@@ -232,6 +232,10 @@ h1 {
   overflow: visible;
   word-wrap: break-word;
   box-sizing: border-box;
+}
+.visitor-counter * {
+  color: #999 !important;
+  font-size: 0.85em !important;
 }
 footer {
   margin-top: 60px;
@@ -375,24 +379,23 @@ footer {
 
 <script data-goatcounter="https://cryptowithimpact.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>
-(function() {
-  var pollInterval = setInterval(function() {
-    if (window.goatcounter && window.goatcounter.visit_count) {
-      clearInterval(pollInterval);
-      window.goatcounter.visit_count({
-        append: '#gc-visitors',
-        type: 'html',
-        no_branding: true,
-        style: 'color: #999; font-size: 0.85em;'
-      });
-    }
-  }, 100);
-  
-  // Timeout after 15 seconds
-  setTimeout(function() {
-    clearInterval(pollInterval);
-  }, 15000);
-})();
+window.addEventListener('load', function() {
+  if (window.goatcounter && window.goatcounter.visit_count) {
+    window.goatcounter.visit_count({
+      append: '#gc-visitors',
+      no_branding: true
+    });
+  } else {
+    setTimeout(function() {
+      if (window.goatcounter && window.goatcounter.visit_count) {
+        window.goatcounter.visit_count({
+          append: '#gc-visitors',
+          no_branding: true
+        });
+      }
+    }, 1000);
+  }
+});
 </script>
 
 
