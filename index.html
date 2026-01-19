@@ -221,17 +221,15 @@ h1 {
 .visitor-counter {
   text-align: center;
   margin: 0 auto 20px auto;
-  padding: 10px 15px;
-  color: #e0e0e0;
-  font-size: 1.2em;
-  border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.05);
   max-width: 250px;
   min-width: 200px;
   display: block;
-  overflow: visible;
-  word-wrap: break-word;
-  box-sizing: border-box;
+}
+.visitor-counter iframe {
+  width: 100%;
+  border: 1px solid #333;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
 }
 footer {
   margin-top: 60px;
@@ -360,39 +358,25 @@ footer {
 <div class="entry-title"><a href="https://www.quantconnect.com/">QuantConnect</a></div>
 </div>
 <div class="entry-content">
-<div class="entry-field"><span class="entry-label">Name:</span> <span class="entry-value"><a href="https://www.quantconnect.com/">QuantConnect</a></span></div>
-<div class="entry-field"><span class="entry-label">Link:</span> <span class="entry-value"><a href="https://www.quantconnect.com/">https://www.quantconnect.com/</a></span></div>
+<div class="entry-field"><span class="entry-label">Coin Name:</span> <span class="entry-value"><a href="https://www.quantconnect.com/">QuantConnect</a></span></div>
+<div class="entry-field"><span class="entry-label">Project Link:</span> <span class="entry-value"><a href="https://www.quantconnect.com/">https://www.quantconnect.com/</a></span></div>
 <div class="entry-field"><span class="entry-label">Type:</span> <span class="entry-value">algorithmic trading platform</span></div>
 <div class="entry-field"><span class="entry-label">Domain:</span> <span class="entry-value">backtesting, live trading</span></div>
-<div class="entry-field"><span class="entry-label">Primary use:</span> <span class="entry-value">quantitative research and execution</span></div>
-<div class="entry-field"><span class="entry-label">Known for:</span> <span class="entry-value">LEAN open-source engine, multi-asset support, cloud-based backtesting</span></div>
 <div class="entry-field entry-field-description"><span class="entry-label">Description:</span> <span class="entry-value">Cloud-based platform for quantitative research, backtesting, and live trading. Includes access to financial data, alternative datasets, and supports equities, options, futures, forex, and cryptocurrencies. Uses open-source LEAN engine for strategy development and execution.</span></div>
-<div class="entry-field"><span class="entry-label">Status:</span> <span class="entry-value">pending 🟡</span></div>
+<div class="entry-field"><span class="entry-label">Status:</span> <span class="entry-value">Funding Now 💰</span></div>
 </div>
 </div>
 
-<div class="visitor-counter" id="gc-visitors"></div>
+<div class="visitor-counter">
+  <iframe src="https://cryptowithimpact.goatcounter.com?hideui=1" style="width: 100%; min-height: 150px; height: auto; border: 1px solid #333; background: rgba(255, 255, 255, 0.05); border-radius: 4px;" scrolling="no"></iframe>
+</div>
 
 
 <img src="https://backtest-infra.site/pixel?site=backtest-infra" alt="" width="1" height="1" style="position: absolute; opacity: 0; pointer-events: none;">
 
 <script data-goatcounter="https://cryptowithimpact.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script>
-(function() {
-  var pollInterval = setInterval(function() {
-    if (window.goatcounter && window.goatcounter.visit_count) {
-      clearInterval(pollInterval);
-      window.goatcounter.visit_count({
-        append: '#gc-visitors',
-        type: 'html',
-        no_branding: true,
-        style: 'color: #999; font-size: 0.85em;'
-      });
-    }
-  }, 100);
-})();
-</script>
 
 
 </body>
 </html>
+
