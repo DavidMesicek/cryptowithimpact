@@ -6,7 +6,7 @@
 <title>Trading Backtest Registry</title>
 <style>
 html {
-  background-image: url('backround.png');
+  background-image: url('backround.png?v=2');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -220,13 +220,19 @@ h1 {
 }
 .visitor-counter {
   text-align: center;
-  margin: 0 auto 20px auto;
-  padding: 10px;
+  margin: 30px auto;
+  padding: 15px;
   color: #e0e0e0;
   font-size: 1.2em;
   border: 1px solid #333;
   background: rgba(255, 255, 255, 0.05);
-  max-width: 200px;
+  max-width: 300px;
+  display: block;
+}
+.visitor-counter * {
+  color: #999 !important;
+  font-size: 0.85em !important;
+  text-align: center !important;
 }
 footer {
   margin-top: 60px;
@@ -357,14 +363,21 @@ footer {
   var pollInterval = setInterval(function() {
     if (window.goatcounter && window.goatcounter.visit_count) {
       clearInterval(pollInterval);
-      window.goatcounter.visit_count({
-        append: '#gc-visitors',
-        type: 'html',
-        no_branding: true,
-        style: 'color: #999; font-size: 0.85em;'
-      });
+      var container = document.getElementById('gc-visitors');
+      if (container) {
+        window.goatcounter.visit_count({
+          append: '#gc-visitors',
+          type: 'html',
+          no_branding: true
+        });
+      }
     }
   }, 100);
+  
+  // Timeout after 10 seconds
+  setTimeout(function() {
+    clearInterval(pollInterval);
+  }, 10000);
 })();
 </script>
 
